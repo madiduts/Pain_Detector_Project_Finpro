@@ -19,7 +19,7 @@ st.set_page_config(
 @st.cache_resource
 def load_model():
     # Pastikan nama file sesuai dengan yang sudah dikompresi
-    return joblib.load('nyeri_rf_model_compressed.pkl')
+    return joblib.load('nyeri_rf_baseline_model.pkl')
 
 model = load_model()
 

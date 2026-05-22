@@ -27,7 +27,7 @@ model = load_model()
 # 3. SIDEBAR (PANEL INFORMASI)
 # ==========================================
 with st.sidebar:
-    st.image("https://cdn-icons-png.flaticon.com/512/3003/3003004.png", width=100)
+    st.image("1bdab2d786620b811c991b95b19aac99.webp", width=100)
     st.title("PainSense AI")
     st.markdown("---")
     st.markdown("**Informasi Sistem:**")

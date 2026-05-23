@@ -29,6 +29,11 @@ with st.sidebar:
     st.markdown("**Algoritma:** `Random Forest`")
     st.markdown("---")
     st.markdown("👨‍⚕️ *Dikembangkan untuk Final Project 2026*")
+    st.markdown("---")
+    st.markdown("**Anggota Tim:**")
+    st.markdown("1. Mahdi Imantaka Sutejo")
+    st.markdown("2. Zulfi Alisya")
+    st.markdown("3. Muhammad Fadhillah Nasri")
 
 # Dashboard Utama
 st.title("🩺 Dashboard Deteksi Nyeri Dini")

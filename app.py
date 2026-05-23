@@ -3,19 +3,14 @@ import pandas as pd
 import joblib
 from preprocess import extract_features
 
-# ==========================================
-# 1. KONFIGURASI HALAMAN
-# ==========================================
+# Config halaman
 st.set_page_config(
     page_title="PainSense AI | Deteksi Nyeri",
     page_icon="🩺",
     layout="wide", # Menggunakan layout lebar agar lebih profesional
     initial_sidebar_state="expanded"
 )
-
-# ==========================================
-# 2. MEMUAT MODEL (CACHE AGAR CEPAT)
-# ==========================================
+# Load model dengan caching agar tidak perlu load ulang setiap kali ada interaksi
 @st.cache_resource
 def load_model():
     # Pastikan nama file sesuai dengan yang sudah dikompresi
@@ -23,11 +18,9 @@ def load_model():
 
 model = load_model()
 
-# ==========================================
-# 3. SIDEBAR (PANEL INFORMASI)
-# ==========================================
+# UI Sidebar
 with st.sidebar:
-    st.image("1bdab2d786620b811c991b95b19aac99.webp", width=100)
+    st.image("f5d358fa49587ddfc55b94d46af289b1.png", width=100)
     st.title("PainSense AI")
     st.markdown("---")
     st.markdown("**Informasi Sistem:**")
@@ -37,9 +30,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("👨‍⚕️ *Dikembangkan untuk Final Project 2026*")
 
-# ==========================================
-# 4. KONTEN UTAMA (DASHBOARD)
-# ==========================================
+# Dashboard Utama
 st.title("🩺 Dashboard Deteksi Nyeri Dini")
 st.markdown("Unggah data CSV rekaman sensor fisiologis pasien (minimal 5 detik observasi / 20 baris data) untuk mendapatkan analisis tingkat keparahan nyeri.")
 
@@ -51,9 +42,7 @@ with col_kiri:
     st.info("Format wajib: CSV dengan kolom hr, eda_tonic, eda_phasic, acc_x, acc_y, acc_z, bvp, temp.")
     uploaded_file = st.file_uploader("Seret dan lepas file CSV di sini", type=["csv"])
 
-# ==========================================
-# 5. LOGIKA PREDIKSI & VISUALISASI HASIL
-# ==========================================
+# Logika Prediksi dan Tampilan Hasil
 with col_kanan:
     st.subheader("📊 Hasil Diagnosis AI")
     

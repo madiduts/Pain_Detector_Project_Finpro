@@ -25,7 +25,7 @@ def extract_features(raw_df):
         
     df['eda_phasic_roll_skew'] = df['eda_phasic'].rolling(window=window_size, min_periods=1).apply(calculate_skew, raw=True)
     
-    # 3. Seleksi Fitur (Urutan harus sama persis dengan saat training!)
+    # 3. Seleksi Fitur (Urutan sesuai yang dipakai model)
     features_to_keep = [
         'eda_tonic', 'eda_phasic', 'hr_roll_mean', 'hr_roll_std', 
         'eda_phasic_roll_mean', 'eda_phasic_roll_skew', 'acc_mag', 'bvp', 'temp'
